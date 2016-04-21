@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<script src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<style type="text/css">
+
+			body{
+			  background-color: black;  
+			}
+
+			#bigBall {
+			  margin-top: 100px;
+			  background-color: white;
+			  height : 100px;
+			  width: 100px;
+			  border-radius: 50%;
+			  margin: auto;
+			}
+
+		</style>
+		<script>
+  			var socket = io();
+
+  			socket.on("circle-size", function (size) {
+  				console.log(size);
+  				var ball = $("#bigBall");
+
+  				ball.height(size);
+    			ball.width(size);
+
+  			});
+
+		</script>
+</head>
+<body>
+	<div id="bigBall">
+		
+	</div>
+</body>
+</html>
